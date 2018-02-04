@@ -3,7 +3,7 @@ const users = {};
 const startingValues = {
     cash: 100.00,
     stocks: [{
-        symbol: 'NASDAQ:GOOGL',
+        symbol: 'GOOGL',
         shares: 40
     }]
 };

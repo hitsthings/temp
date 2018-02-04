@@ -22,11 +22,13 @@ export default connect(({ quotes, quoteLoading }) => ({ quotes, quoteLoading }))
     onTermChange = e => this._onTermChange(e.target.value);
 
     buy = () => {
-        tradeStock(this.props.quotes[this.state.term], Number(this.amountInput.value));
+        const fullSymbol = this.props.quotes[this.state.term].symbol;
+        this.props.dispatch(tradeStock(fullSymbol, Number(this.amountInput.value)));
     };
 
     sell = () => {
-        tradeStock(this.props.quotes[this.state.term], -Number(this.amountInput.value));
+        const fullSymbol = this.props.quotes[this.state.term].symbol;
+        this.props.dispatch(tradeStock(fullSymbol, -Number(this.amountInput.value)));
     };
 
     render() {
