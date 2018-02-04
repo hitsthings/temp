@@ -1,0 +1,48 @@
+1. Overall process you went through, any key decisions made.
+
+Read the instructions
+
+I'm comfortable with React, so I used create-react-app to get some boilerplate going on the front. Used express-generator for backend boilerplate.
+
+Considered how I'd identify users (do I need a login on this?). Decided I should.
+
+
+
+
+
+2. Shortcuts, simplifying assumptions, known bugs, etc.
+
+- Given this project has a life of 6 hours and my coding style doesn't usually use TDD, I skipped tests.
+
+- I didn't shop around to various financial APIs - your Yahoo API mention took me to yahoo-finance on NPM and then to google-finance so I used that package. THen I realized it was historical data, so I tried AlphaVantage.
+
+- the client/server directory interaction is messy. Would love to add time cleaning this up.
+
+- no TLS, session cookie is not secure
+
+- caching is whatever the boilerplate gave me and no more.
+
+- Redux actions are super coarse - would make them granular with more time (could reduce REST API response weight if I did)
+
+- file structure is based on types of code, rather than topic/feature, which won't scale well.
+
+- only tested in Chrome - I might need to polyfill some things like fetch for better support.
+
+- avoided any kind of complex trades like LIMIT
+
+- CORS is wildcarded and there's no content security policy stuff. I'd need to clean this up to restrict the API to only the website domain(s).
+
+
+
+3. What slowed you down, what was unexpected
+
+I haven't used create-react-app before and not used express in a very long time. Was just kinda winging it.
+
+Some interaction between cookies and the service worker. Disabled service worker caching for now.
+
+
+
+
+4. Any problems you ran into, and how you solved them
+
+
