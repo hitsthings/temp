@@ -2,11 +2,17 @@
 
 Read the instructions
 
-I'm comfortable with React, so I used create-react-app to get some boilerplate going on the front. Used express-generator for backend boilerplate.
+I'm mostly comfortable with React, so I used create-react-app to get some boilerplate going on the front. Used express-generator for backend boilerplate.
 
 Considered how I'd identify users (do I need a login on this?). Decided I should.
 
+Login took a ton of time and I have a bug I can't fix where my session keeps resetting. I worked around it by just storing the la=st user in memory (this is a huge hack).
 
+I wrote some Redux + thunk code to execute various actions a user would want.
+
+I wrote backend REST APIs to handle those actions.
+
+I wrote some React to actually do the actions and display results.
 
 
 
@@ -32,17 +38,23 @@ Considered how I'd identify users (do I need a login on this?). Decided I should
 
 - CORS is wildcarded and there's no content security policy stuff. I'd need to clean this up to restrict the API to only the website domain(s).
 
+- I did literally zero CSS. Happy to come back to that later if you want to see it.
+
+- AlphaVantage is incredibly slow. I'd cache this in a production app.
+
 
 
 3. What slowed you down, what was unexpected
 
 I haven't used create-react-app before and not used express in a very long time. Was just kinda winging it.
 
-Some interaction between cookies and the service worker. Disabled service worker caching for now.
+
 
 
 
 
 4. Any problems you ran into, and how you solved them
 
+cookie + session pain. I still don't know why the session resets on every load, it's probably something trivial.
 
+kids came back halfway through and I've had to help out with them. I'm out of time now (spent ~6 hours so far).
